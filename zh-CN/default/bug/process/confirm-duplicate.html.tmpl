@@ -20,11 +20,11 @@
      FILTER bug_link(original_bug_id) %]
 
 <p>
-  當把一個 [% terms.bug %] 標記為重複的時候，汇报此重複 [% terms.bug %] 的人將會被加入到原先的 [% terms.bug %] 的寄件副本清單中。在 [% orig_bug FILTER none %] （也就是原先的 [% terms.bug %] ）的權限設定上，回報此重複 [% terms.bug %] 的人通常是無法看見的。
+  當把一個 [% terms.bug %] 標記為重複的時候，汇报此重複 [% terms.bug %] 的人將會被加入到原先的 [% terms.bug %] 的寄件副本清單中。在 [% orig_bug FILTER none %] （也就是原先的 [% terms.bug %] ）的權限設定上，汇报此重複 [% terms.bug %] 的人通常是無法看見的。
 </p>
 
 <p>
-  <b>把汇报者加入 [% orig_bug FILTER none %] 的寄件副本清單的話，將會使回報者[% IF cclist_accessible %]立刻[% ELSE %]未來可能[% END %]擁有瀏覽這個 [% terms.bug %] 的權限。</b>你確定嗎？
+  <b>把汇报者加入 [% orig_bug FILTER none %] 的寄件副本清單的話，將會使汇报者[% IF cclist_accessible %]立刻[% ELSE %]未來可能[% END %]擁有瀏覽這個 [% terms.bug %] 的權限。</b>你確定嗎？
 </p>
 
 <form method="post" action="process_bug.cgi">

@@ -39,17 +39,17 @@
   [% END %]
 </p>
 
-<p>注意：目前還無法編輯和此資料集有關聯的搜尋。
+<p>注意：目前還無法編輯和此資料集有關聯的搜索。
 </p>
 
 <p>
-  <a href="query.cgi?[% default.query FILTER html %]">檢視系列的搜尋參數
+  <a href="query.cgi?[% default.query FILTER html %]">檢視系列的搜索參數
     </a> |
   <a href="buglist.cgi?cmdtype=dorem&amp;namedcmd=
     [% default.category FILTER uri %]-
     [% default.subcategory FILTER uri %]-
     [% default.name FILTER uri %]&amp;remaction=runseries&amp;series_id=
-    [% default.series_id %]">執行系列搜尋</a>
+    [% default.series_id %]">執行系列搜索</a>
 </p>
 
 [% PROCESS global/footer.html.tmpl %]

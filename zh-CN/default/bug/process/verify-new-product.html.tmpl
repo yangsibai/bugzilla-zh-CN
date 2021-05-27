@@ -220,7 +220,7 @@
   [% id = cgi_param('id') %]
   取消，並回到 [% "$terms.bug $id" FILTER bug_link(id) FILTER none %]
 [% ELSE %]
-  取消，並回到<a href="buglist.cgi?regetlastlist=1">上次的搜尋結果</a>
+  取消，並回到<a href="buglist.cgi?regetlastlist=1">上次的搜索結果</a>
 [% END %]
 
 [% PROCESS global/footer.html.tmpl %]

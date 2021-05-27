@@ -28,11 +28,11 @@
   </script>
 [% END %]
 
-<p>你已儲存的搜尋如下：</p>
+<p>你已儲存的搜索如下：</p>
 
   <table id="saved_search_prefs">
     <tr class="column_header">
-      <th>搜尋</th>
+      <th>搜索</th>
       <th>執行</th>
       <th>編輯</th>
       <th>刪除</th>
@@ -125,15 +125,15 @@
   </table>
 
 [% IF user.can_bless %]
-  <p>注意：對於每個選擇「加到頁尾」的搜尋，在你按下「儲存設定」鍵之後，將會把選擇分享的搜尋加到群組中的每一位成員的頁尾。</p>
+  <p>注意：對於每個選擇「加到頁尾」的搜索，在你按下「儲存設定」鍵之後，將會把選擇分享的搜索加到群組中的每一位成員的頁尾。</p>
 [% END %]
 
 [% IF user.queries_available.size %]
-  <p>你可以使用這些已存並由他人分享的搜尋：</p>
+  <p>你可以使用這些已存並由他人分享的搜索：</p>
 
   <table id="shared_search_prefs">
     <tr class="column_header">
-      <th>搜尋</th>
+      <th>搜索</th>
       <th>分享者</th>
       <th>分享給</th>
       <th>執行</th>
@@ -166,5 +166,5 @@
     [% END %]
   </table>
 [% ELSE %]
-  <p>其他人並未和你分享搜尋。</p>
+  <p>其他人並未和你分享搜索。</p>
 [% END %]

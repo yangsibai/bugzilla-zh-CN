@@ -77,7 +77,7 @@ keywords =>
 
 longdesc =>
   "Bugzilla 使用者可以在 $terms.Bugs 加入描述或意見。"
-  _ "你可以在這些意見裡搜尋。",
+  _ "你可以在這些意見裡搜索。",
 
 op_sys =>
   "在哪一種作業系統上會發生這個 $terms.bug 。",
@@ -142,7 +142,7 @@ version =>
   "版本欄位是用來定義 $terms.bug 在軟體的哪個版本發生。",
 
 votes =>
-  "有些 $terms.bugs 可以投票，因此你可以將你的搜尋"
+  "有些 $terms.bugs 可以投票，因此你可以將你的搜索"
   _ "限制在至少要有一定票數的 $terms.bugs 裡。",
 
 work_time =>
@@ -153,7 +153,7 @@ work_time =>
 ##########################
 
 chfield =>
-  "你可以搜尋特定種類的變更，這個欄位就是給你選擇用的。",
+  "你可以搜索特定種類的變更，這個欄位就是給你選擇用的。",
 
 # Duplicated to chfieldto below, also.
 chfieldfrom =>
@@ -168,13 +168,13 @@ chfieldvalue =>
   "上欄所定義的數值是在該段時間做出變更的。",
 
 content =>
-  "此欄位為搜尋用。將會對 $vars.field_descs.short_desc 和
-   $vars.field_descs.longdesc 欄位做類似 Google 的「全文搜尋」。",
+  "此欄位為搜索用。將會對 $vars.field_descs.short_desc 和
+   $vars.field_descs.longdesc 欄位做類似 Google 的「全文搜索」。",
 
 # Duplicated to email2 below, also.
 email1 =>
   "每個人在每個 $terms.bug 扮演的角色不盡相同。"
-  _ "你可以以特定角色搜尋特定人員。",
+  _ "你可以以特定角色搜索特定人員。",
 
 } %]
 
@@ -184,7 +184,7 @@ email1 =>
 [% vars.help_html.deadlineto = vars.help_html.deadline %]
 
 [% help_all_note = BLOCK %]
-  <strong>注意：</strong>搜尋時，若選擇 "All" 選項，
+  <strong>注意：</strong>搜索時，若選擇 "All" 選項，
   只會找該欄位值為 "All" 的 [% terms.bugs %] 。
 [% END %]
 [% FOREACH all_field = ['op_sys', 'rep_platform'] %]
@@ -214,7 +214,7 @@ email1 =>
 
   [%# Add help for the search types, for query.cgi. %]
   [% type_desc = BLOCK %]
-    你想要搜尋的 [% vars.field_descs.${help_field} FILTER html %] 種類。
+    你想要搜索的 [% vars.field_descs.${help_field} FILTER html %] 種類。
   [% END %]
   [% SET type_name = help_field _ '_type' %]
   [% vars.help_html.$type_name = type_desc %]

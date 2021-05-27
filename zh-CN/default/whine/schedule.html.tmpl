@@ -26,7 +26,7 @@
 %]
 
 <p>
-  「訂閱」這項功能，是 Bugzilla 在一個固定的期間執行一項已儲存的搜尋，並將搜尋結果所列出的 [% terms.bugs %] 以電子郵件傳送。
+  「訂閱」這項功能，是 Bugzilla 在一個固定的期間執行一項已儲存的搜索，並將搜索結果所列出的 [% terms.bugs %] 以電子郵件傳送。
 </p>
 
 <p>
@@ -42,11 +42,11 @@
 </p>
 
 <p>
-  搜尋來自已儲存的搜尋。<br>
-  已儲存的搜尋是在執行<a href="query.cgi">搜尋</a>頁面，並將該頁面結果以指定的名稱儲存於 Bugzilla 中。<br>
-  點選「新增搜尋」，選擇已儲存的搜尋名稱，並於 [% terms.bug %] 表格中加入標題。<br>
-  「排序」下的數字為選填。若有多筆搜尋排列，將會以該數字決定執行的順序（從最小到最大）。<br>
-  如果勾選「每個 [% terms.bug %] 送出一封信」，那麼符合該搜尋的每個 [% terms.bug%] 都會寄出一封信。
+  搜索來自已儲存的搜索。<br>
+  已儲存的搜索是在執行<a href="query.cgi">搜索</a>頁面，並將該頁面結果以指定的名稱儲存於 Bugzilla 中。<br>
+  點選「新增搜索」，選擇已儲存的搜索名稱，並於 [% terms.bug %] 表格中加入標題。<br>
+  「排序」下的數字為選填。若有多筆搜索排列，將會以該數字決定執行的順序（從最小到最大）。<br>
+  如果勾選「每個 [% terms.bug %] 送出一封信」，那麼符合該搜索的每個 [% terms.bug%] 都會寄出一封信。
 </p>
 
 <p>
@@ -97,7 +97,7 @@
   </tr>
 
   <tr>
-    <th>即使搜尋結果沒有任何 [% terms.bugs %] ，仍然送出訊息：</th>
+    <th>即使搜索結果沒有任何 [% terms.bugs %] ，仍然送出訊息：</th>
     <td colspan="2">
       <input type="checkbox" name="event_[% event.key %]_mailifnobugs"
         [%- IF event.value.mailifnobugs == 1 %] checked [% END %]>
@@ -190,10 +190,10 @@
   [% IF event.value.queries.size == 0 %]
 
     <tr>
-      <th>搜尋：</th>
+      <th>搜索：</th>
       <td>
-        無搜尋<br>
-        <input type="submit" value="新增搜尋"
+        無搜索<br>
+        <input type="submit" value="新增搜索"
                name="add_query_[% event.key %]"
                id="add_query_[% event.key %]">
       </td>
@@ -205,13 +205,13 @@
   [% ELSE %]
 
     <tr>
-      <th>搜尋：</th>
+      <th>搜索：</th>
       <td colspan="2">
 
         <table class="search_list">
           <tr>
             <th>排序</th>
-            <th>搜尋</th>
+            <th>搜索</th>
             <th>標題</th>
             <th colspan="2"></th>
           </tr>
@@ -256,7 +256,7 @@
 
           <tr>
             <td colspan="3">
-              <input type="submit" value="新增搜尋"
+              <input type="submit" value="新增搜索"
                      name="add_query_[% event.key %]"
                      id="add_query_[% event.key %]">
             </td>
@@ -296,7 +296,7 @@
     </select>
 
   [% ELSE %]
-    請瀏覽<a href="query.cgi">搜尋</a>頁面並儲存搜尋結果
+    請瀏覽<a href="query.cgi">搜索</a>頁面並儲存搜索結果
   [% END %]
 
 [%+ END %]

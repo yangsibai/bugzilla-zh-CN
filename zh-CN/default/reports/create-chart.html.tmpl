@@ -171,7 +171,7 @@ function subcatSelected() {
                 [% series.category FILTER uri %]%20/%20
                 [% series.subcategory FILTER uri %]%20/%20
                 [% series.name FILTER uri -%]&amp;series_id=
-                [% series.series_id %]&amp;remaction=runseries">執行搜尋</a>
+                [% series.series_id %]&amp;remaction=runseries">執行搜索</a>
             </td>
           </tr>
         [% END %]
@@ -242,12 +242,12 @@ function subcatSelected() {
 [% IF user.in_group('editbugs') %]
   <h3>新增資料集</h3>
   <p>
-    你可以根據已儲存的搜尋為基礎，來建立新的資料集。或是你也可以從頭開始建立。
+    你可以根據已儲存的搜索為基礎，來建立新的資料集。或是你也可以從頭開始建立。
   </p>
 
   <form action="chart.cgi" id="create_series" name="create_series" method="GET">
     <input type="hidden" name="action" value="convert_search">
-    <label for="series_from_search">以搜尋為基礎：</label>
+    <label for="series_from_search">以搜索為基礎：</label>
     <select id="series_from_search" name="series_from_search">
       <option value="">(從頭開始)</option>
       [% FOREACH q = user.queries %]

@@ -197,7 +197,7 @@
     [% ELSIF action == "schedule" %]
       排程
     [% ELSIF action == "search" %]
-      搜尋
+      搜索
     [% ELSIF action == "use" %]
       使用
     [% ELSIF action == "approve" %]
@@ -342,9 +342,9 @@
 
   [% ELSIF error == "buglist_parameters_required" %]
     [% title = "需要輸入字串" %]
-    [% docslinks = {'using/finding.html' => "搜尋 $terms.bugs",
+    [% docslinks = {'using/finding.html' => "搜索 $terms.bugs",
                     'using/finding.html#bug-lists' => "$terms.Bug 清單"} %]
-    在未輸入搜尋字串時，你無法搜尋，或儲存搜尋結果。
+    在未輸入搜索字串時，你無法搜索，或儲存搜索結果。
 
   [% ELSIF error == "cc_remove_denied" %]
     [% title = "拒絕變更" %]
@@ -989,8 +989,8 @@
     <a href="[% docs_urlbase FILTER html %]query.html#pronouns">代名詞替換</a>。
 
   [% ELSIF error == "illegal_query_name" %]
-    [% title = "無效的搜尋名稱" %]
-    你的搜尋名稱不得包含下列任一字元： &lt; 、 &gt; 、 &amp; 。
+    [% title = "無效的搜索名稱" %]
+    你的搜索名稱不得包含下列任一字元： &lt; 、 &gt; 、 &amp; 。
 
   [% ELSIF error == "illegal_series_creation" %]
     [% admindocslinks = {'categorization.html#assigning-group-controls-to-products' => '群組安全性'} %]
@@ -1282,7 +1282,7 @@
 
   [% ELSIF error == "missing_cookie" %]
     [% title = "缺少 cookie" %]
-    很抱歉，系統遺失了記錄你前次搜尋結果的 cookie 。你必須到<a href="query.cgi">搜尋頁</a>重新來過。
+    很抱歉，系統遺失了記錄你前次搜索結果的 cookie 。你必須到<a href="query.cgi">搜索頁</a>重新來過。
 
   [% ELSIF error == "missing_database_url" %]
     [% title = "缺少 \$DATABASE_URL" %]
@@ -1304,10 +1304,10 @@
     你並未指定此一系列的名稱。
 
   [% ELSIF error == "missing_query" %]
-    [% title = "缺少搜尋" %]
-    [% docslinks = {'using/finding.html' => "搜尋 $terms.bugs",
+    [% title = "缺少搜索" %]
+    [% docslinks = {'using/finding.html' => "搜索 $terms.bugs",
                     'using/finding.html#bug-lists' => "$terms.Bug 清單"} %]
-    名稱是 <em>[% name FILTER html %]</em> 的搜尋
+    名稱是 <em>[% name FILTER html %]</em> 的搜索
     [% IF sharer_id && sharer_id != user.id %]
       並未對你公開。
     [% ELSE %]
@@ -1581,37 +1581,37 @@
     的子產品。
 
   [% ELSIF error == "query_name_missing" %]
-    [% title = "未指定搜尋名稱" %]
+    [% title = "未指定搜索名稱" %]
     [% docslinks = {'using/finding.html#bug-lists' => "$terms.Bug 清單"} %]
-    你必須輸入你的搜尋名稱。
+    你必須輸入你的搜索名稱。
 
   [% ELSIF error == "query_name_too_long" %]
     [% title = "查詢名稱過長" %]
     查詢名稱的長度不得超過 [% constants.MAX_LEN_QUERY_NAME FILTER html %] 字元。
 
   [% ELSIF error == "quicksearch_invalid_query" %]
-    [% title = "無效的搜尋" %]
-    輸入的搜尋無效。
+    [% title = "無效的搜索" %]
+    輸入的搜索無效。
     [% IF operators %]
       [% operators.shift FILTER html %] 運算子不能放在
       [%+ operators.shift FILTER html %] 後面。
     [% ELSE %]
-      搜尋不能以 AND 或 OR 開頭，也不能以 AND 、 OR 或 NOT 結尾。它們是系統保留的運算子。
-      如果你要搜尋這些字串的話，請以引號 (") 將字串包起來。
+      搜索不能以 AND 或 OR 開頭，也不能以 AND 、 OR 或 NOT 結尾。它們是系統保留的運算子。
+      如果你要搜索這些字串的話，請以引號 (") 將字串包起來。
     [% END %]
 
   [% ELSIF error == "quicksearch_unbalanced_quotes" %]
-    [% title = "搜尋格式不正確" %]
-    Bugzilla 無法正確解析你所輸入的搜尋字串：
+    [% title = "搜索格式不正確" %]
+    Bugzilla 無法正確解析你所輸入的搜索字串：
     <em>[% string FILTER html %]</em><br>
     如果你用引號 (") 包覆字串，請確認引號開頭和結尾都有出現。
-    如果你想要搜尋的字串中含有引號時，請在引號前加上反斜線 (\) 。
-    例如，<em>"I'm so \"special\", really"</em>（有引號）就會被解析為要搜尋
+    如果你想要搜索的字串中含有引號時，請在引號前加上反斜線 (\) 。
+    例如，<em>"I'm so \"special\", really"</em>（有引號）就會被解析為要搜索
     <em>I'm so "special", really</em> 。
 
   [% ELSIF error == "quicksearch_unknown_field" %]
-    [% title = "快速搜尋發生錯誤" %]
-    你的搜尋發生問題：
+    [% title = "快速搜索發生錯誤" %]
+    你的搜索發生問題：
     [% FOREACH field = unknown %]
       <p><code>[% field FILTER html %]</code> 並非已知的欄位。</p>
     [% END %]
@@ -1688,33 +1688,33 @@
     沒有找到相對應的 REST API 。
 
   [% ELSIF error == "saved_search_used_by_whines" %]
-    [% title = "搜尋名稱使用中" %]
+    [% title = "搜索名稱使用中" %]
     [% docslinks = {'administering/whining.html' => '關於訂閱'} %]
-    已儲存的搜尋名稱 <em>[% search_name FILTER html %]</em> 已被用於<a
+    已儲存的搜索名稱 <em>[% search_name FILTER html %]</em> 已被用於<a
     href="editwhines.cgi">訂閱</a>，主題為下列內容：
     [%+ subjects FILTER html %]
 
   [% ELSIF error == "search_content_without_matches" %]
-    [% title = "無效的搜尋" %]
-    「內容」欄位只能被用於「符合」搜尋，而「符合」搜尋也只能用於「內容」欄位。
+    [% title = "無效的搜索" %]
+    「內容」欄位只能被用於「符合」搜索，而「符合」搜索也只能用於「內容」欄位。
 
   [% ELSIF error == "search_grouped_field_invalid" %]
-    在群組搜尋條件中， Bugzilla 不支援使用
+    在群組搜索條件中， Bugzilla 不支援使用
     "[%+ field_descs.$field FILTER html %]" ([% field FILTER html %])
     欄位。
 
   [% ELSIF error == "search_grouped_invalid_nesting" %]
-    你不能在群組搜尋條件中使用巢狀條件。
+    你不能在群組搜索條件中使用巢狀條件。
 
   [% ELSIF error == "search_grouped_field_mismatch" %]
-    在群組搜尋中，所有條件必須使用同一欄位。
+    在群組搜索中，所有條件必須使用同一欄位。
 
   [% ELSIF error == "search_field_operator_invalid" %]
     Bugzilla 不支援在
     "[%+ field_descs.$field FILTER html %]" ([% field FILTER html %])
     欄位使用
     "[% search_descs.$operator FILTER html %]" ([% operator FILTER html %])
-    搜尋。
+    搜索。
 
   [% ELSIF error == "see_also_self_reference" %]
     你不能把這個 [% terms.bug %] 放在它自己的
@@ -1993,7 +1993,7 @@
       [% END %]
     [% END %]
 
-    已儲存的搜尋 '[% namedcmd FILTER html %]'。
+    已儲存的搜索 '[% namedcmd FILTER html %]'。
   </p>
 [% END %]
 
@@ -2027,9 +2027,9 @@
   [% ELSIF class == "Bugzilla::Keyword" %]
     關鍵字
   [% ELSIF class == "Bugzilla::Search::Recent" %]
-    最近搜尋
+    最近搜索
   [% ELSIF class == "Bugzilla::Search::Saved" %]
-    已儲存的搜尋
+    已儲存的搜索
   [% ELSIF ( matches = class.match('^Bugzilla::Field::Choice::(.+)') ) %]
     [% SET field_name = matches.0 %]
     [% field_descs.$field_name FILTER html %]

@@ -210,13 +210,13 @@
         [% IF namedqueries %]
           <li>
             [% otheruser.login FILTER html %] 有 [% namedqueries FILTER html %]
-            個[% '已分享的' IF namedquery_group_map %]自訂搜尋名稱，將和該使用者一併刪除。
+            個[% '已分享的' IF namedquery_group_map %]自訂搜索名稱，將和該使用者一併刪除。
             [% IF namedquery_group_map %]
               [% IF namedqueries > 1 %]
                 在那之中，有 [% namedquery_group_map FILTER html %]
-                個是已分享的自訂搜尋。
+                個是已分享的自訂搜索。
               [% END %]
-              其他使用者將不再可以使用這 [% namedquery_group_map %] 個已分享的自訂搜尋名稱。
+              其他使用者將不再可以使用這 [% namedquery_group_map %] 個已分享的自訂搜索名稱。
             [% END %]
           </li>
         [% END %]
@@ -293,7 +293,7 @@
            [% INCLUDE listselectionurlparams %]">編輯該使用者</a>，回到<a
      href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">使用者清單</a>，[% IF editusers %]<a
      href="editusers.cgi?action=add[% INCLUDE listselectionurlparams %]">新增使用者</a>，[% END %]或是<a
-     href="editusers.cgi">搜尋其他使用者</a>。
+     href="editusers.cgi">搜索其他使用者</a>。
 </p>
 
 [% PROCESS global/footer.html.tmpl %]

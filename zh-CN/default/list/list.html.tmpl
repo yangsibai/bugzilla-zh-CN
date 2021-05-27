@@ -110,10 +110,10 @@
   'isnotactive'
 ] %]
 <a id="search_description_controller" class="bz_default_hidden"
-   href="javascript:TUI_toggle_class('search_description')">隱藏搜尋描述</a>
+   href="javascript:TUI_toggle_class('search_description')">隱藏搜索描述</a>
 [%# Show the link if the browser supports JS %]
 <script type="text/javascript">
-  TUI_alternates['search_description'] = '顯示搜尋描述';
+  TUI_alternates['search_description'] = '顯示搜索描述';
   YAHOO.util.Dom.removeClass('search_description_controller',
                              'bz_default_hidden');
 </script>
@@ -171,8 +171,8 @@
     [% IF one_product.defined %]
       <li><a href="enter_bug.cgi">在不同的產品中汇报一個新的 [% terms.bug %]</a></li>
     [% END %]
-    <li><a href="[% PROCESS edit_search_url %]">編輯搜尋條件</a></li>
-    <li><a href="query.cgi">開始新的搜尋</a></li>
+    <li><a href="[% PROCESS edit_search_url %]">編輯搜索條件</a></li>
+    <li><a href="query.cgi">開始新的搜索</a></li>
   </ul>
 [% END %]
 
@@ -207,11 +207,11 @@
           </form>
           [% IF time_summary_limited %]
             <span class="bz_info">
-              時間統計將只會包含上面所顯示的 [% terms.bugs %] 。如要顯示搜尋結果中所有
+              時間統計將只會包含上面所顯示的 [% terms.bugs %] 。如要顯示搜索結果中所有
               [% terms.bugs%] 的時間統計，你可以
               <a href="buglist.cgi?[% urlquerypart FILTER html %]
                        [%- "&order=$qorder" FILTER html IF order %]&limit=0">
-                顯示所有搜尋結果</a>。
+                顯示所有搜索結果</a>。
             </span>
           [% END %]
         [% END %]
@@ -262,7 +262,7 @@
     <div class="bz_query_edit">
       <button type="button" id="edit_search"
               onclick="document.location='[% PROCESS edit_search_url FILTER js %]'">
-          編輯搜尋條件</button>
+          編輯搜索條件</button>
     </div>
 
     [% IF searchtype == "saved" %]
@@ -271,19 +271,19 @@
                 onclick="document.location='buglist.cgi?cmdtype=dorem&amp;remaction=forget&amp;namedcmd=
                          [%- searchname FILTER uri FILTER js %]&amp;token=
                          [%- issue_hash_token([search_id, searchname]) FILTER uri %]'">
-          刪除已儲存的搜尋 '[% searchname FILTER html %]'</button>
+          刪除已儲存的搜索 '[% searchname FILTER html %]'</button>
       </div>
     [% ELSE %]
       <div class="bz_query_remember">
         <form method="get" action="buglist.cgi">
-          <input type="submit" id="remember" value="將搜尋結果儲存為">
+          <input type="submit" id="remember" value="將搜索結果儲存為">
           <input type="hidden" name="newquery"
                  value="[% urlquerypart FILTER html %][% "&order=$qorder" FILTER html IF order %]">
           <input type="hidden" name="cmdtype" value="doit">
           <input type="hidden" name="remtype" value="asnamed">
           <input type="hidden" name="token" value="[% issue_hash_token(['savedsearch']) FILTER html %]">
           <input type="text" id="save_newqueryname" name="newqueryname" size="20"
-                 title="新搜尋名稱" value="[% defaultsavename FILTER html %]">
+                 title="新搜索名稱" value="[% defaultsavename FILTER html %]">
         </form>
       </div>
     [% END %]
@@ -338,7 +338,7 @@
       只顯示 [% Param('default_search_limit') FILTER html %] 個
       [%+ terms.bugs %] 。
       <a href="buglist.cgi?[% urlquerypart FILTER html %]
-              [%- "&order=$qorder" FILTER html IF order %]&limit=0">顯示所有搜尋結果</a>。
+              [%- "&order=$qorder" FILTER html IF order %]&limit=0">顯示所有搜索結果</a>。
       [% time_summary_limited = 1 %]
     [% ELSE %]
       找到 [% bugs.size %] 個 [%+ terms.bugs %] 。

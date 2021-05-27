@@ -35,7 +35,7 @@
       [% IF author.login == recipient.login %]
         <a href="[%+ urlbase FILTER html %]editwhines.cgi">點選此處以編輯你的訂閱排程</a>
       [% ELSE %]
-        此搜尋結果由 [% author.login FILTER html %] 排定。
+        此搜索結果由 [% author.login FILTER html %] 排定。
       [% END %]
     </p>
 
@@ -73,7 +73,7 @@
   [% END %]
 [% ELSE %]
 
-  <h3>找不到符合搜尋標準的 [% terms.bugs %] 。</h3>
+  <h3>找不到符合搜索標準的 [% terms.bugs %] 。</h3>
 [% END %]
 
   </body>

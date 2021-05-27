@@ -95,35 +95,35 @@
     瀏覽 [% product.name FILTER html %] 產品的 [% terms.bugs %]
 
   [% ELSIF message_tag == "buglist_adding_field" %]
-    [% title = "新增欄位至搜尋頁中…" %]
+    [% title = "新增欄位至搜索頁中…" %]
     [% link  = "如果此頁面並未自動更新，請點選此連結。" %]
 
   [% ELSIF message_tag == "buglist_new_default_query" %]
-    已新增預設搜尋。你也可以將任何搜尋的結果設為書籤。
+    已新增預設搜索。你也可以將任何搜索的結果設為書籤。
 
   [% ELSIF message_tag == "buglist_new_named_query" %]
-    [% title = "已建立搜尋" %]
-    已將搜尋結果儲存為 <code><a
+    [% title = "已建立搜索" %]
+    已將搜索結果儲存為 <code><a
      href="buglist.cgi?cmdtype=runnamed&amp;namedcmd=[% queryname FILTER uri %]"
     >[% queryname FILTER html %]</a></code> 。
 
   [% ELSIF message_tag == "buglist_query_gone" %]
-    [% title = "搜尋結果已刪除" %]
+    [% title = "搜索結果已刪除" %]
     [% link  = "復原刪除" %]
-    名稱是 <b>[% namedcmd FILTER html %]</b> 的搜尋結果已刪除。
+    名稱是 <b>[% namedcmd FILTER html %]</b> 的搜索結果已刪除。
 
   [% ELSIF message_tag == "buglist_sorted_by_relevance" %]
     此清單中的[% terms.Bugs %]以關聯度排序，關聯度最高的在最上面。
 
   [% ELSIF message_tag == "buglist_updated_named_query" %]
-    [% title = "已更新搜尋" %]
-    已更新你的搜尋「<code><a
+    [% title = "已更新搜索" %]
+    已更新你的搜索「<code><a
       href="buglist.cgi?cmdtype=runnamed&amp;namedcmd=[% queryname FILTER uri %]"
       >[% queryname FILTER html %]</a></code>」。
 
   [% ELSIF message_tag == "change_columns" %]
     [% title = "變更欄位" %]
-    以新欄位重新顯示你的搜尋中...
+    以新欄位重新顯示你的搜索中...
     如果頁面沒有自動更新，請點選<a href="[% redirect_url FILTER html %]">此連結</a>。
 
   [% ELSIF message_tag == "classification_created" %]

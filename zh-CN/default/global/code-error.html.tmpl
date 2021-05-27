@@ -238,7 +238,7 @@
     無法以 TLS 連線至 LDAP 伺服器：<code>[% error FILTER html %]</code>。
 
   [% ELSIF error == "ldap_search_error" %]
-    在 LDAP 嘗試搜尋 &quot;[% username FILTER html %]&quot; 時，出現錯誤：
+    在 LDAP 嘗試搜索 &quot;[% username FILTER html %]&quot; 時，出現錯誤：
     [% IF errstr %]
       <code>[% errstr FILTER html %]</code>
     [% ELSE %]
@@ -320,16 +320,16 @@
     <code>[% errstr FILTER html %]</code>。
 
   [% ELSIF error == "search_cp_without_op" %]
-    搜尋參數 f[% id FILTER html %] 是 "CP" ，但在它之前沒有符合的
+    搜索參數 f[% id FILTER html %] 是 "CP" ，但在它之前沒有符合的
     "OP" 。
 
   [% ELSIF error == "search_field_operator_unsupported" %]
-    [% title = "無效的搜尋種類" %]
-    Bugzilla 不支援搜尋參數
+    [% title = "無效的搜索種類" %]
+    Bugzilla 不支援搜索參數
     "[% operator.truncate(30, "...") FILTER html %]" 。
 
   [% ELSIF error == "search_invalid_joiner" %]
-    '[% joiner FILTER html %]' 對搜尋而言不是有效的 joiner 。
+    '[% joiner FILTER html %]' 對搜索而言不是有效的 joiner 。
 
   [% ELSIF error == "setting_info_invalid" %]
     要新增設定，你必須輸入設定名稱、合適的數值／排序鍵，以及預設值。
