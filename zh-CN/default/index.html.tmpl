@@ -61,7 +61,7 @@
   <div class="bz_common_actions">
     <ul>
       <li>
-        <a id="enter_bug" href="enter_bug.cgi"><span>回報 [% terms.Bug %]</span></a>
+        <a id="enter_bug" href="enter_bug.cgi"><span>汇报 [% terms.Bug %]</span></a>
       </li>
       <li>
         <a id="query" href="query.cgi"><span>搜尋</span></a>
@@ -127,14 +127,14 @@
 
       <li>
         <a href="buglist.cgi?chfield=%5BBug%20creation%5D&amp;chfieldfrom=24h">最近 24 小時</a>
-        [% title = BLOCK %]最近 24 小時回報的 [% terms.bugs %][% END %]
+        [% title = BLOCK %]最近 24 小時汇报的 [% terms.bugs %][% END %]
         <a href="buglist.cgi?chfield=%5BBug%20creation%5D&amp;chfieldfrom=24h&amp;ctype=atom&amp;title=[% title FILTER uri %]"
            class="rss">&nbsp;</a>
         | <a href="buglist.cgi?chfield=%5BBug%20creation%5D&amp;chfieldfrom=7d">最近 7 天</a>
-        [% title = BLOCK %]最近 7 天回報的 [% terms.bugs %][% END %]
+        [% title = BLOCK %]最近 7 天汇报的 [% terms.bugs %][% END %]
         <a href="buglist.cgi?chfield=%5BBug%20creation%5D&amp;chfieldfrom=7d&amp;ctype=atom&amp;title=[% title FILTER uri %]"
            class="rss">&nbsp;</a>
-        回報的 [% terms.bugs %]
+        汇报的 [% terms.bugs %]
       </li>
       <li>
         <a href="buglist.cgi?chfieldfrom=24h">最近 24 小時</a>

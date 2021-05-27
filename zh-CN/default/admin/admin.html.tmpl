@@ -53,7 +53,7 @@
         [% class = (Param('useclassification') && user.in_group('editclassifications')) ? "" : "forbidden" %]
         <dt id="classifications" class="[% class %]"><a href="editclassifications.cgi">分類</a></dt>
         <dd class="[% class %]">如果你需要一次管理多種產品，建議你將產品分為數個分類。
-        <br>這樣對使用者搜尋或回報新的 [% terms.bugs %] 時，也較為容易。</dd>
+        <br>這樣對使用者搜尋或汇报新的 [% terms.bugs %] 時，也較為容易。</dd>
 
         [% class = (user.in_group('editcomponents')
                     || user.get_products_by_permission("editcomponents").size) ? "" : "forbidden" %]

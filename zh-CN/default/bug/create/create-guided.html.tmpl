@@ -35,12 +35,12 @@ function PutDescription() {
 }
 </script>
 
-<h3 id="step1">步驟 3 之 1 － 你的[% terms.bug %]是否已被回報了？</h3>
+<h3 id="step1">步驟 3 之 1 － 你的[% terms.bug %]是否已被汇报了？</h3>
 
 <p class="warning">
-  請勿跳過此步驟－－半數以上的 [% terms.bugs %] 都已回報過了。
+  請勿跳過此步驟－－半數以上的 [% terms.bugs %] 都已汇报過了。
 </p>
-<p>檢查兩份最常被回報的 [% terms.bug %] 清單：</p>
+<p>檢查兩份最常被汇报的 [% terms.bug %] 清單：</p>
 <p>
   <a href="duplicates.cgi?product=[% product.name FILTER uri %]&amp;format=simple"
      target="somebugs">所有時間點的前 100 名 [% terms.bugs %]</a> （預設載入） |
@@ -79,7 +79,7 @@ function PutDescription() {
 <h3 id="step2">步驟 3 之 2 － 提供資訊</h3>
 
 <p>
-  如果你試了幾次搜尋但都找不到，那麼請回報這個 [% terms.bug %] 。
+  如果你試了幾次搜尋但都找不到，那麼請汇报這個 [% terms.bug %] 。
 </p>
 
 <form id="guided_form" method="post" action="post_bug.cgi">
@@ -299,7 +299,7 @@ function PutDescription() {
         或任何關於<b>你的電腦組態</b>的資訊。較長的資訊，例如 <b>stack trace</b> 或
         <b>HTML testcase</b> ，應該使用「新增附件」連結。如果你覺得 build 設定也有關聯，請在網址列輸入
         <kbd>about:buildconfig</kbd> ，並一併輸入該資訊。<br><br>
-        如果你回報的是當掉的情況，請註明在哪個模組裡軟體當掉（例如：<kbd>在 gkhtml.dll 發生應用程式錯誤</kbd>。）
+        如果你汇报的是當掉的情況，請註明在哪個模組裡軟體當掉（例如：<kbd>在 gkhtml.dll 發生應用程式錯誤</kbd>。）
       </p>
     </td>
   </tr>
@@ -337,17 +337,17 @@ function PutDescription() {
 </table>
 
 
-<h3 id="step3">步驟 3 之 3 － 送出 [% terms.bug %] 回報</h3>
+<h3 id="step3">步驟 3 之 3 － 送出 [% terms.bug %] 汇报</h3>
 
 <p>
-  <input type="submit" id="report" value="送出 [% terms.bug %] 回報">
+  <input type="submit" id="report" value="送出 [% terms.bug %] 汇报">
 </p>
 
 <p>
   就這樣！非常感謝。如果有任何進度，將會以電子郵件通知。
 </p>
 <p>
-  請瞭解到我們收到一堆 [% terms.bug %] 回報－－可能要一段時間才會看到你的回報。你可以藉由清楚描述
+  請瞭解到我們收到一堆 [% terms.bug %] 汇报－－可能要一段時間才會看到你的回報。你可以藉由清楚描述
   [%+ terms.bug %] 來幫助我們更快瞭解問題所在，並回覆電子郵件中任何可能詢問的問題。
 </p>
 

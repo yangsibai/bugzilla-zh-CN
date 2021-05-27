@@ -687,7 +687,7 @@
                  name="reporter_accessible" id="reporter_accessible"
                  [% " checked" IF bug.reporter_accessible %]
                  [% " disabled=\"disabled\"" UNLESS user_can_edit_accessible %]>
-          <label for="reporter_accessible">回報者</label>
+          <label for="reporter_accessible">汇报者</label>
         </div>
         <div>
           [% user_can_edit_accessible =
@@ -722,11 +722,11 @@
 [% BLOCK section_dates %]
   <tr id="field_tablerow_reported">
     <th class="field_label">
-      回報於：
+      汇报於：
     </th>
     <td>
      於 [% bug.creation_ts FILTER time("%Y-%m-%d %H:%M %Z") %]
-     由 [% INCLUDE global/user.html.tmpl who = bug.reporter %] 回報
+     由 [% INCLUDE global/user.html.tmpl who = bug.reporter %] 汇报
     </td>
   </tr>
 

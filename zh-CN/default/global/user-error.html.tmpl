@@ -310,7 +310,7 @@
     [% bug_id FILTER uri %]&amp;GoAheadAndLogIn=1">登入</a>。
 
   [% ELSIF error == "bug_url_invalid" %]
-    [% title = "無效的 $terms.Bug 回報資訊網址" %]
+    [% title = "無效的 $terms.Bug 汇报資訊網址" %]
     <code>[% url FILTER html %]</code> 對一個 [% terms.bug %] 而言並不是有效的網址。
     [% IF reason == 'http' %]
       網址必須以 "http" 或 "https" 開頭。
@@ -335,8 +335,8 @@
     [% END %]
 
   [% ELSIF error == "bug_url_too_long" %]
-    [% title = "無效的 $terms.Bug 回報資訊網址" %]
-    [% terms.Bug %] 回報資訊網址不能長於
+    [% title = "無效的 $terms.Bug 汇报資訊網址" %]
+    [% terms.Bug %] 汇报資訊網址不能長於
     [%+ constants.MAX_BUG_URL_LENGTH FILTER none %] 字元。
     <code>[% url FILTER html %]</code> 太長了。
 
@@ -935,7 +935,7 @@
     ，但是只有
     [% IF privs < constants.PRIVILEGES_REQUIRED_EMPOWERED %]
       [% terms.bug %] 的負責人
-      [% IF privs < constants.PRIVILEGES_REQUIRED_ASSIGNEE %]或回報者[% END %]
+      [% IF privs < constants.PRIVILEGES_REQUIRED_ASSIGNEE %]或汇报者[% END %]
       ，或
     [% END %]
     擁有所需要權限的使用者才能變更該欄位。
@@ -1373,7 +1373,7 @@
   [% ELSIF error == "no_initial_bug_status" %]
     [% title = "沒有初始的 $terms.Bug 狀態" %]
     在新增 [% terms.bug %]時沒有初始的 [% terms.bug %] 狀態可以選。
-    請將此問題回報給 [% Param("maintainer") %] 。
+    請將此問題汇报給 [% Param("maintainer") %] 。
 
   [% ELSIF error == "no_keywords" %]
     [% title = "沒有關鍵字" %]
@@ -1515,9 +1515,9 @@
     你必須輸入產品的名稱。
 
   [% ELSIF error == "product_disabled" %]
-    [% title = BLOCK %]產品已不允許回報 [% terms.Bug %][% END %]
+    [% title = BLOCK %]產品已不允許汇报 [% terms.Bug %][% END %]
     [% admindocslinks = {'categorization.html#products' => '管理產品'} %]
-    很抱歉，已不允許在產品 <em>[% product.name FILTER html %]</em> 中回報 [% terms.bug %] 。
+    很抱歉，已不允許在產品 <em>[% product.name FILTER html %]</em> 中汇报 [% terms.bug %] 。
 
   [% ELSIF error == "product_edit_denied" %]
     [% title = "權限不足" %]

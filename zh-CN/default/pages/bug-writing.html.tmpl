@@ -6,17 +6,17 @@
   # defined by the Mozilla Public License, v. 2.0.
   #%]
 
-[% INCLUDE global/header.html.tmpl title = "$terms.Bug 回報寫作技巧" %]
+[% INCLUDE global/header.html.tmpl title = "$terms.Bug 汇报寫作技巧" %]
 
-  <p>有效率的 [% terms.bug %] 回報可以讓 [% terms.bug %] 較容易被修復。以下解釋如何寫出此類回報。
+  <p>有效率的 [% terms.bug %] 汇报可以讓 [% terms.bug %] 較容易被修復。以下解釋如何寫出此類回報。
 
 <h3>原則</h3>
 
   <ul>
     <li>正確</li>
     <li>清晰－－適當解釋，讓他人可以重製該 [% terms.bug %]</li>
-    <li>每份報告只回報一個 [% terms.bug %]</li>
-    <li>即使是微小的 [% terms.bug %] 也應該回報－－小的 [% terms.bugs %] 背後可能隱藏著大的 [% terms.bugs %]</li>
+    <li>每份報告只汇报一個 [% terms.bug %]</li>
+    <li>即使是微小的 [% terms.bug %] 也應該汇报－－小的 [% terms.bugs %] 背後可能隱藏著大的 [% terms.bugs %]</li>
     <li>陳述事實而不猜測</li>
   </ul>
 
@@ -26,13 +26,13 @@
   <li>以最新 build 的軟體試著重製你遇到的 [% terms.bug %] ，看此問題是否已修正。</li>
 
   <li><a href="query.cgi?format=specific">搜尋</a> [% terms.Bugzilla %]
-  看看你遇到的 [% terms.bug %] 是否已有人回報。
+  看看你遇到的 [% terms.bug %] 是否已有人汇报。
   </li>
 </ol>
 
-<h3>回報一個新的 [% terms.Bug %]</h3>
+<h3>汇报一個新的 [% terms.Bug %]</h3>
 
-<p>如果你已在最新的 build 重製出這個 [% terms.bug %] 而且還沒有人回報，那麼：</p>
+<p>如果你已在最新的 build 重製出這個 [% terms.bug %] 而且還沒有人汇报，那麼：</p>
 
 <ol>
  <li>點選「<a href="enter_bug.cgi">輸入新的 [% terms.bug %]</a> 」</li>
@@ -50,7 +50,7 @@
     如果你的[% field_descs.op_sys FILTER html %]不在清單上，選擇<em>[% display_value("op_sys", "其他 (Other)") FILTER html %]</em> 。</p>
 
     <p><b>摘要：</b>你如何以少於 60 個字元的長度，來描述這個 [% terms.bug %] ？<br>
-    一個好的摘要應該能夠<b>快速並獨一無二地識別 [% terms.bug %] 的回報。</b>
+    一個好的摘要應該能夠<b>快速並獨一無二地識別 [% terms.bug %] 的汇报。</b>
     它應該要解釋問題所在點，而非提供解決方法。<br>
     <ul>
      <li>好的例子：「<kbd>取消複製檔案的對話框時，檔案總管當掉</kbd>」</li>
@@ -59,7 +59,7 @@
     </ul>
 
     <b>描述：</b>
-    問題回報的細節，包括：</p>
+    問題汇报的細節，包括：</p>
 
     <blockquote>
       <p><b>概觀：</b>對於摘要做更詳細的描述。
@@ -124,7 +124,7 @@ Build 2006-08-10 的 Mac OS 10.4.3
       </ul>
     </blockquote>
 
-  <p>檢查報告內容是否正確，然後點選「送出」，就可以將你回報的 [% terms.bug %] 放進 [% terms.Bugzilla %] 資料庫裡了。<br>
+  <p>檢查報告內容是否正確，然後點選「送出」，就可以將你汇报的 [% terms.bug %] 放進 [% terms.Bugzilla %] 資料庫裡了。<br>
   </p>
 </blockquote>
 

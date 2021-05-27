@@ -202,7 +202,7 @@
         [% END %]
       [% END %]
       [% IF changes.isactive.defined %]
-        <li>[% comp.is_active ? "啟用" : "停用" %] 回報 [% terms.bugs %] 功能</li>
+        <li>[% comp.is_active ? "啟用" : "停用" %] 汇报 [% terms.bugs %] 功能</li>
       [% END %]
       </ul>
     [% ELSE %]
@@ -887,7 +887,7 @@
           <li>已將版本更名為 <em>[% version.name FILTER html %]</em></li>
         [% END %]
         [% IF changes.isactive.defined %]
-          <li>[% version.is_active ? "啟用" : "停用" %] 回報 [% terms.bugs %] 功能</li>
+          <li>[% version.is_active ? "啟用" : "停用" %] 汇报 [% terms.bugs %] 功能</li>
         [% END %]
       </ul>
     [% ELSE %]

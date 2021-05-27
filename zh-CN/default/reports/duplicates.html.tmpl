@@ -21,10 +21,10 @@
 [% IF product.size %]
   [% title = BLOCK %]
     產品 [% query_products.join(', ') FILTER html %]
-    最常回報的 [% terms.Bugs %]
+    最常汇报的 [% terms.Bugs %]
   [% END %]
 [% ELSE %]
-  [% title = "最常回報的 $terms.Bugs" %]
+  [% title = "最常汇报的 $terms.Bugs" %]
 [% END%]
 
 [% PROCESS global/header.html.tmpl title = title %]
@@ -121,11 +121,11 @@
 <hr>
 
 <h3 id="explanation">
-  什麼是「最常回報的 [% terms.Bugs %] 」？
+  什麼是「最常汇报的 [% terms.Bugs %] 」？
 </h3>
 
 <p>
-  最常回報的 [% terms.Bugs %] 頁面列出目前狀態為開啟，且最常被回報的
+  最常汇报的 [% terms.Bugs %] 頁面列出目前狀態為開啟，且最常被回報的
   [%+ terms.bugs %] 清單。此清單產生方式為計算被直接或間接標記為重複的
   [%+ terms.bugs %] 數量。提供此清單的目的是將輸入 [% terms.Bugzilla %]
   的重複 [% terms.bugs %] 數量減到最低，以省下品保工程師分類 [% terms.bugs %] 的時間。
@@ -134,7 +134,7 @@
 <b>我如何使用這份清單？</b>
 
 <ul>
-  <li>檢視最常回報的 [% terms.bugs %] 清單。</li>
+  <li>檢視最常汇报的 [% terms.bugs %] 清單。</li>
   <li>如果你的問題列在上面：</li>
 
   <ul>
