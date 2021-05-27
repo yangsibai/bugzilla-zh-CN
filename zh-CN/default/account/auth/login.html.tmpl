@@ -1,0 +1,125 @@
+[%# This Source Code Form is subject to the terms of the Mozilla Public
+  # License, v. 2.0. If a copy of the MPL was not distributed with this
+  # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+  #
+  # This Source Code Form is "Incompatible With Secondary Licenses", as
+  # defined by the Mozilla Public License, v. 2.0.
+  #%]
+
+[%# INTERFACE:
+  # target: string. URL to go to after login.
+  #%]
+
+[% IF !target %]
+ [% target = "index.cgi" %]
+[% END %]
+
+[% PROCESS global/header.html.tmpl
+  title = "登入 $terms.Bugzilla"
+%]
+
+[% USE Bugzilla %]
+
+<h2 class="center">
+  [% terms.Bugzilla %] 需要一組有效的帳號及密碼才能繼續
+</h2>
+
+<form id="login_form" name="login" action="[% urlbase FILTER html %][% target FILTER html %]"
+      method="POST" [% IF cgi_param("data") %] enctype="multipart/form-data"[% END %]>
+  <table>
+    <tr>
+      <th>
+         <label for="Bugzilla_login">
+           [% IF login_not_email %]
+             帳號：
+           [% ELSE %]
+             電子郵件地址：
+           [% END %]
+         </label>
+       </th>
+      <td>
+        <input id="Bugzilla_login" name="Bugzilla_login"
+               [%- ' type="email"' UNLESS login_not_email %] autofocus required>
+      </td>
+    </tr>
+
+    <tr>
+      <th><label for="Bugzilla_password">密碼：</label></th>
+      <td>
+        <input type="password" id="Bugzilla_password" name="Bugzilla_password" required>
+      </td>
+    </tr>
+
+    [% IF Param('rememberlogin') == 'defaulton' ||
+          Param('rememberlogin') == 'defaultoff' %]
+      <tr>
+        <th>
+          <input type="checkbox" id="Bugzilla_remember" name="Bugzilla_remember" value="on"
+                 [%+ "checked" IF Param('rememberlogin') == "defaulton" %]>
+        </th>
+        <td>
+          <label for="Bugzilla_remember">記住登入資訊</label>
+        </td>
+      </tr>
+    [% END %]
+
+    <tr>
+      <th>
+        <input type="checkbox" id="Bugzilla_restrictlogin" name="Bugzilla_restrictlogin"
+               checked="checked">
+      </th>
+      <td>
+        <label for="Bugzilla_restrictlogin">限制此次登入期間僅能使用此IP
+        （使用此一選項以增強安全性）</label>
+      </td>
+    </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+      <td>
+        <input type="submit" name="GoAheadAndLogIn" value="登入" id="log_in">
+      </td>
+    </tr>
+  </table>
+
+  [% PROCESS "global/hidden-fields.html.tmpl"
+     exclude="^Bugzilla_(login|password|restrictlogin)$" %]
+
+  <input type="hidden" name="Bugzilla_login_token"
+         value="[% get_login_request_token() FILTER html %]">
+
+  [% Hook.process('additional_methods') %]
+
+  <div class="links">
+    [% can_create_account = 0 %]
+    [% IF Param("createemailregexp") && user.authorizer.user_can_create_account %]
+      <span><a href="createaccount.cgi">建立新帳號</a></span>
+      [% can_create_account = 1 %]
+    [% END %]
+
+   [% IF user.authorizer.can_change_password %]
+      [% "|" IF can_create_account %]
+      <span><a href="createaccount.cgi?request_new_password=1">忘記密碼</a></span>
+    [% END %]
+  </div>
+
+  <hr>
+  <div class="info">
+    <p>
+      注意：你應該確認瀏覽器已允許來自此站台的 cookie ，否則會需要經常登入。
+    </p>
+
+    [% IF can_create_account %]
+      <p>
+        [% IF Param("requirelogin") %]
+          此一 Bugzilla 僅允許獲得授權的使用者登入瀏覽，因此需要有帳號。
+        [% ELSIF target.match("_bug\.cgi$") %]
+          當需要回報一個新的 [% terms.bug %] ，或者對現有的 [% terms.bug %] 留下意見時，需要一個帳號。
+          當後續有需要更多資訊時，可以聯絡上你。
+        [% END %]
+      </p>
+    [% END %]
+  </div>
+</form>
+
+[% PROCESS global/footer.html.tmpl %]
